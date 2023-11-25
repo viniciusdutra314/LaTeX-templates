@@ -1,0 +1,130 @@
+\documentclass{article}
+\usepackage[portuguese]{babel}
+\usepackage[a4paper, top=3cm, bottom=2cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{blindtext}
+\usepackage{datetime}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx} 
+\usepackage{minted}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\usepackage{indentfirst}
+\usepackage{fancyhdr}  
+\usepackage{caption}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{titletoc}
+
+
+\renewcommand{\thesection}{\Alph{section}}
+\renewcommand{\thesubsection}{\Alph{section}\arabic{subsection}}
+
+\titleformat{\section}{\normalfont\Large\bfseries}{Questão \thesection\quad}{0em}{}
+\titleformat{\subsection}{\normalfont\large\bfseries}{Questão \thesubsection\quad}{0em}{}
+
+
+\titlecontents{section}[0em]{\bfseries}{Questão \thecontentslabel\quad}{}{\titlerule*[1pc]{.}\contentspage}
+\titlecontents{subsection}[1em]{\bfseries}{Questão \thecontentslabel\quad}{}{\titlerule*[1pc]{.}\contentspage}
+
+\newcommand{\annotationbox}[3]{
+    \definecolor{currentcol}{named}{#3} 
+    \begin{tcolorbox}[colback=currentcol!5!white, colframe=currentcol!75!black, title={#1}]
+        {#2}
+    \end{tcolorbox}
+}
+
+\newcommand{\coded}[3]{
+    \definecolor{Gray}{gray}{0.9}
+    \begin{minipage}{\textwidth}
+        \captionof{listing}{{#3}}
+        \inputminted[
+            frame=lines,
+            framesep=2mm,
+            baselinestretch=1.2,
+            bgcolor=Gray,
+            linenos]{#1}{#2}
+    \end{minipage}
+}
+\renewcommand\listingscaption{Código}
+\renewcommand\listoflistingscaption{Lista de Códigos}
+
+%uniform ref
+\newcommand{\figref}[1]{figura \ref{#1}}
+\newcommand{\tabref}[1]{tabela \ref{#1}}
+\newcommand{\eqnref}[1]{equação (\ref{#1})}
+
+\newcommand{\theauthor}{Vinícius Sousa Dutra (13686257)}
+\newcommand{\thetitle}{Projeto 5 - Mecânica celeste}
+
+\newcommand{\addimage}[3][100mm]{
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width={#1}]{{#2}}
+        \caption{{#3}}
+    \end{figure}    
+}   
+
+\pagestyle{fancy}  
+\fancyhf{}  
+\rhead{\theauthor} 
+\lhead{Projeto 5 - Mecânica celeste}  
+\cfoot{\thepage} 
+
+
+\begin{document}
+
+
+
+\begin{titlepage}
+    \begin{center}
+        \begin{figure}[htb!]
+            \centering
+            \includegraphics[width=150mm]{images/ifsc_logo.jpg}
+        \end{figure}
+        \vspace{20pt}
+        \LARGE{\textbf{Universidade de São Paulo}}\\
+        \LARGE{Instituto de Física de São Carlos}\\
+
+        \vspace{150pt}
+
+        
+        \LARGE{\textbf{{\thetitle}}} 
+        \\ 
+        \textsc{\LARGE Introdução à Física Computacional (7600017)}
+        \\
+        
+        
+        \vspace{125pt}
+        \begin{minipage}{\textwidth}
+            \begin{flushleft} \large
+                \textbf{Professor:}\\
+                Francisco Castilho Alcaraz\\[0.8cm]
+                \textbf{Aluno:}\\
+                \theauthor
+                
+                \end{flushleft}
+                \end{minipage}\\[1 cm]
+        \vspace{30pt}
+        \vspace{\fill}  
+        \Large {\today}
+
+    \end{center}
+\end{titlepage}
+
+\newpage
+\tableofcontents
+\listoffigures
+\listoftables
+\listoflistings
+
+\section{Derivação Numérica}
+\subsection{Derivada usando 2 pontos}
+
+\section{Integração Numérica}
+
+
+
+
+\section{Raízes de polinômios numéricas}
+
+\end{document}
