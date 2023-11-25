@@ -43,7 +43,7 @@
 ## Build tool directories for auxiliary files
 # latexrun
 latex.out/
-
+_minted-teste/
 ## Auxiliary and intermediate files from other packages:
 # algorithms
 *.alg

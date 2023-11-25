@@ -1,0 +1,106 @@
+\documentclass{article}
+\usepackage[portuguese]{babel}
+\usepackage[a4paper, top=3cm, bottom=2cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{blindtext}
+\usepackage{datetime}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx} 
+\usepackage{minted}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\usepackage{indentfirst}
+\usepackage{fancyhdr}  
+\usepackage{caption}
+
+\newcommand{\annotationbox}[3]{
+    \definecolor{currentcol}{named}{#3} 
+    \begin{tcolorbox}[colback=currentcol!5!white, colframe=currentcol!75!black, title={#1}]
+        {#2}
+    \end{tcolorbox}
+}
+
+\newcommand{\coded}[3]{
+    \definecolor{Gray}{gray}{0.9}
+    \begin{minipage}{\textwidth}
+        \captionof{listing}{{#3}}
+        \inputminted[
+            frame=lines,
+            framesep=2mm,
+            baselinestretch=1.2,
+            bgcolor=Gray,
+            linenos]{#1}{#2}
+    \end{minipage}
+}
+\renewcommand\listingscaption{Código}
+\renewcommand\listoflistingscaption{Lista de Códigos}
+
+%uniform ref
+\newcommand{\figref}[1]{figura \ref{#1}}
+\newcommand{\tabref}[1]{tabela \ref{#1}}
+\newcommand{\eqnref}[1]{equação (\ref{#1})}
+
+\newcommand{\theauthor}{Vinícius Sousa Dutra (13686257)}
+\newcommand{\thetitle}{Introduzindo otimização no $\mathbf{R^n}$}
+
+\newcommand{\addimage}[3][100mm]{
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width={#1}]{{#2}}
+        \caption{{#3}}
+    \end{figure}    
+}   
+
+\pagestyle{fancy}  
+\fancyhf{}  
+\rhead{\theauthor} 
+\lhead{\thetitle}  
+\cfoot{\thepage} 
+
+\begin{document}
+
+\begin{titlepage}
+    \begin{center}
+        \begin{figure}[htb!]
+            \centering
+            \includegraphics[width=100mm]{images/ifsc_logo.jpg}
+        \end{figure}
+        \vspace{20pt}
+        \Large{\textbf{Universidade de São Paulo}}\\
+        \Large{Instituto de Física de São Carlos}\\
+
+        \vspace{150pt}
+
+        \LARGE{\textbf{{\thetitle}}} 
+        \\
+        \Large {\theauthor\\} 
+
+
+        \vspace{125pt}
+        \vspace{\fill}  
+        \Large {\today}
+
+    \end{center}
+\end{titlepage}
+
+\newpage
+\tableofcontents
+\listoffigures
+\listoftables
+\listoflistings
+
+\newpage
+
+
+\section{Introdução}
+\blindtext
+\cite{fishback2007taylor}
+\section{Metodologia}
+\blindtext
+\section{Resultados}
+\blindtext[2]
+\section{Conclusão}
+\blindtext
+\bibliography{bibliografia/referencias.bib}
+\bibliographystyle{abbrv}
+\end{document}
+
