@@ -11,6 +11,9 @@
 \usepackage{indentfirst}
 \usepackage{fancyhdr}  
 \usepackage{caption}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{titletoc}
 
 \newcommand{\annotationbox}[3]{
     \definecolor{currentcol}{named}{#3} 
@@ -40,7 +43,7 @@
 \newcommand{\eqnref}[1]{equação (\ref{#1})}
 
 \newcommand{\theauthor}{Vinícius Sousa Dutra (13686257)}
-\newcommand{\thetitle}{Introduzindo otimização no $\mathbf{R^n}$}
+\newcommand{\thetitle}{Crossover em algoritmos genéticos}
 
 \newcommand{\addimage}[3][100mm]{
     \begin{figure}[H]
@@ -53,29 +56,44 @@
 \pagestyle{fancy}  
 \fancyhf{}  
 \rhead{\theauthor} 
-\lhead{\thetitle}  
+\lhead{Crossover em algoritmos genéticos}  
 \cfoot{\thepage} 
 
+
 \begin{document}
+
+
 
 \begin{titlepage}
     \begin{center}
         \begin{figure}[htb!]
             \centering
-            \includegraphics[width=100mm]{images/ifsc_logo.jpg}
+            \includegraphics[width=150mm]{images/ifsc_logo.jpg}
         \end{figure}
         \vspace{20pt}
-        \Large{\textbf{Universidade de São Paulo}}\\
-        \Large{Instituto de Física de São Carlos}\\
+        \LARGE{\textbf{Universidade de São Paulo}}\\
+        \LARGE{Instituto de Física de São Carlos}\\
 
         \vspace{150pt}
 
+        
         \LARGE{\textbf{{\thetitle}}} 
+        \\ 
+        \textsc{\LARGE Otimização combinátoria}
         \\
-        \Large {\theauthor\\} 
-
-
+        
+        
         \vspace{125pt}
+        \begin{minipage}{\textwidth}
+            \begin{flushleft} \large
+                \textbf{Professor:}\\
+                Professor\\[0.8cm]
+                \textbf{Aluno:}\\
+                \theauthor
+                
+                \end{flushleft}
+                \end{minipage}\\[1 cm]
+        \vspace{30pt}
         \vspace{\fill}  
         \Large {\today}
 
@@ -87,20 +105,12 @@
 \listoffigures
 \listoftables
 \listoflistings
-
 \newpage
+\section{Tipos de Crossover}
 
-
-\section{Introdução}
-\blindtext
 \cite{fishback2007taylor}
-\section{Metodologia}
-\blindtext
-\section{Resultados}
-\blindtext[2]
-\section{Conclusão}
-\blindtext
 \bibliography{bibliografia/referencias.bib}
 \bibliographystyle{abbrv}
-\end{document}
 
+
+\end{document}
