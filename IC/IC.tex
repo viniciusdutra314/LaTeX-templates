@@ -3,6 +3,7 @@
 \usepackage[a4paper, top=3cm, bottom=2cm, left=2.5cm, right=2.5cm]{geometry}
 \usepackage{blindtext}
 \usepackage{datetime}
+\usepackage{csvsimple}
 \usepackage[T1]{fontenc}
 \usepackage{graphicx} 
 \usepackage{minted}
@@ -37,6 +38,14 @@
 \renewcommand\listingscaption{Código}
 \renewcommand\listoflistingscaption{Lista de Códigos}
 
+\newcommand{\csvtable}[3][]{%
+  \begin{table}[H]
+    \centering
+    \csvautotabular{#2}
+    \caption{#3}
+    \IfNoValueF{#1}{\label{tab:#1}}
+  \end{table}%
+}
 %uniform ref
 \newcommand{\figref}[1]{figura \ref{#1}}
 \newcommand{\tabref}[1]{tabela \ref{#1}}
@@ -108,6 +117,7 @@
 \newpage
 \section{Tipos de Crossover}
 
+% Example usage with a labe
 \cite{fishback2007taylor}
 \bibliography{bibliografia/referencias.bib}
 \bibliographystyle{abbrv}
