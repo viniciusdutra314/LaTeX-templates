@@ -15,6 +15,7 @@
 \usepackage{enumitem}
 \usepackage{titlesec}
 \usepackage{titletoc}
+\usepackage{hyperref}
 
 \newcommand{\annotationbox}[3]{
     \definecolor{currentcol}{named}{#3} 
@@ -23,14 +24,16 @@
     \end{tcolorbox}
 }
 
-\newcommand{\coded}[3]{
+\newcommand{\coded}[5]{
     \definecolor{Gray}{gray}{0.9}
     \begin{minipage}{\textwidth}
-        \captionof{listing}{{#3}}
+        \captionof{listing}{{#5}}
         \inputminted[
             frame=lines,
             framesep=2mm,
             baselinestretch=1.2,
+            firstline={#3},
+            lastline={#4},
             bgcolor=Gray,
             linenos]{#1}{#2}
     \end{minipage}
@@ -52,7 +55,7 @@
 \newcommand{\eqnref}[1]{equação (\ref{#1})}
 
 \newcommand{\theauthor}{Vinícius Sousa Dutra (13686257)}
-\newcommand{\thetitle}{Crossover em algoritmos genéticos}
+\newcommand{\thetitle}{Problema da Mochila}
 
 \newcommand{\addimage}[3][100mm]{
     \begin{figure}[H]
@@ -65,7 +68,7 @@
 \pagestyle{fancy}  
 \fancyhf{}  
 \rhead{\theauthor} 
-\lhead{Crossover em algoritmos genéticos}  
+\lhead{Problema da Mochila}  
 \cfoot{\thepage} 
 
 
@@ -77,7 +80,7 @@
     \begin{center}
         \begin{figure}[htb!]
             \centering
-            \includegraphics[width=150mm]{images/ifsc_logo.jpg}
+            \includegraphics[width=150mm]{../images/ifsc_logo.jpg}
         \end{figure}
         \vspace{20pt}
         \LARGE{\textbf{Universidade de São Paulo}}\\
@@ -88,7 +91,7 @@
         
         \LARGE{\textbf{{\thetitle}}} 
         \\ 
-        \textsc{\LARGE Otimização combinátoria}
+        \textsc{\LARGE Otimização combinatória}
         \\
         
         
@@ -117,9 +120,8 @@
 \newpage
 \section{Tipos de Crossover}
 
-% Example usage with a labe
 \cite{fishback2007taylor}
-\bibliography{bibliografia/referencias.bib}
+\bibliography{../bibliografia/referencias.bib}
 \bibliographystyle{abbrv}
 
 
